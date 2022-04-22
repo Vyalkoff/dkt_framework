@@ -13,5 +13,14 @@ class PageNotFound:
 
 class Index:
     def __call__(self, request):
-        
-        return '200 OK', render('index.html', name=request.get('name'))
+        return '200 OK', render('index.html', logo=request)
+
+
+class WareHouse:
+    def __call__(self, request):
+        return '200 OK', render('warehouse.html', logo=request)
+
+
+class RepairHistory:
+    def __call__(self, request):
+        return '200 OK', render('repair_history.html', logo=request)

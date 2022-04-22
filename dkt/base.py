@@ -7,7 +7,7 @@ class Framework:
         self.carws_lst = carws_obj  # Controller all requests to the  website
 
     def __call__(self, environ, start_response):
-        print(environ)
+
         request = {}
         path = environ['PATH_INFO']
         if path in self.cswp_lst:
