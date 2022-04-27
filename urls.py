@@ -1,4 +1,4 @@
-from views import Login, Index, WareHouse, RepairHistory
+from views import Login, Index, WareHouse, RepairHistory, StartRepair
 from datetime import date
 
 
@@ -13,4 +13,5 @@ cswp_obj = {
     '/': Index(),
     '/warehouse': WareHouse(),
     '/repair_history': RepairHistory(),
+    '/start_repair': StartRepair(),
 }

@@ -14,7 +14,12 @@ class Framework:
             view = self.cswp_lst[path]
         else:
             view = PageNotFound()
+        method = environ['REQUEST_METHOD']
+        request['method'] = method
+        print(method)
         request['name'] = environ['LOGNAME']
+        print(environ)
+
 
         for carws in self.carws_lst:
             carws(request)

@@ -24,3 +24,8 @@ class WareHouse:
 class RepairHistory:
     def __call__(self, request):
         return '200 OK', render('repair_history.html', logo=request)
+
+
+class StartRepair:
+    def __call__(self, request):
+        return '200 OK', render('start_repair.html', logo=request)
