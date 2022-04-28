@@ -127,7 +127,7 @@
 			<fieldset>
 				<legend style="text-align:center">Оформить приход</legend>
 				<p style="text-align:center"><label class="title" for="qr_code"> QR  код : RCL_04_0</label>
-                    <input class="rounded" required size="3" maxlength="3" min="3" type="text" name="qr_code" id="qr_code">
+                    <input class="rounded"  size="3"  pattern="[0-9]{3}" maxlength="3" type="text" name="qr_code" id="qr_code" required>
                     <select class="rounded" name="par" id="par">
 						 <option value="ac">AC</option>
 						 <option value="one_f">1000</option>

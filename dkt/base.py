@@ -1,4 +1,5 @@
 from views import PageNotFound
+from request import PostRequest
 
 
 class Framework:
@@ -10,16 +11,18 @@ class Framework:
 
         request = {}
         path = environ['PATH_INFO']
+        method = environ['REQUEST_METHOD']
         if path in self.cswp_lst:
             view = self.cswp_lst[path]
         else:
             view = PageNotFound()
-        method = environ['REQUEST_METHOD']
-        request['method'] = method
-        print(method)
-        request['name'] = environ['LOGNAME']
-        print(environ)
 
+        request['method'] = method
+
+        request['logname'] = environ['LOGNAME']
+        if method == 'POST':
+            result = PostRequest(environ).request_params()
+            print(result)
 
         for carws in self.carws_lst:
             carws(request)

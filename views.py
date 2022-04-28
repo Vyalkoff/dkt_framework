@@ -29,3 +29,4 @@ class RepairHistory:
 class StartRepair:
     def __call__(self, request):
         return '200 OK', render('start_repair.html', logo=request)
+
