@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}
+Идет Ремонт
+{% endblock %}
+
+{% block style %}
+{% include "style.html" %}
+{% endblock %}
+
+{% block body %}
+<h2 style="text-align:center">Ремонт</h2>
+
+<div style="display:flex;  flex-wrap:wrap; border:1px solid; width:350px;margin:0 5%; padding:24px">
+        <form  action="" method="post">
+            <fieldset style="text-align:center">
+                <legend >Выбрать кассету</legend>
+                <label class="title" for="qr_code"> QR код : RCL_04_0</label>
+                    <input class="rounded" required size="3" maxlength="3" min="3" type="text" name="qr_code" id="qr_code">
+                    <select class="rounded" name="par" id="par">
+                        <option value="ac">AC</option>
+                        <option value="one_f">1000</option>
+                        <option value="two_f">2000</option>
+                        <option value="five_f">5000</option>
+                        <option value="ten_f">10000</option>
+                    </select>
+
+            </fieldset>
+
+            <fieldset>
+                <div class="form-check">
+
+                    <label class="form-check-label" >ЗИП</label>
+                    <label><input type="radio" name="zip" value="yes" /> Да</label>
+                    <label><input type="radio" name="zip" value="no" /> Нет</label>
+                </div>
+                <div class="form-check">
+
+                    <label class="form-check-label">Неисправность</label>
+                    <label><input type="radio" name="fault" value="yes" /> Да</label>
+                    <label><input type="radio" name="fault" value="no" /> Нет</label>
+                </div>
+            </fieldset>
+            <button  style=" margin:16px 36px" type="submit" class="btn btn-primary">Оформить</button>
+        </form>
+</div>
+{% endblock %}

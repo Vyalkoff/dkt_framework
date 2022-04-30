@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}
+На Складе
+{% endblock %}
+   {% block style %}
+{% include "style.html" %}
+{% endblock %}
+
+
+{% block body %}
+<h2 style="text-align:center">На складе</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+                <th scope="col">№</th>
+                <th scope="col">Время прихода</th>
+                <th scope="col">Модель</th>
+                <th scope="col">QR code</th>
+                <th scope="col">Статус</th>
+                <th scope="col">Комментарий</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+                    <th scope="row">1</th>
+                    <td>19.04.2022</td>
+                    <td>RC 2000</td>
+                    <td class="table-danger"><a href="#">RCL_04_0025_02000</a></td>
+                    <td>Ремонт</td>
+                    <td>Сломан фиксатор
+                    </td>
+    </tr>
+    <tr>
+                <th scope="row">2</th>
+				<td>19.04.2022</td>
+				<td>AC</td>
+				<td class="table-info"><a href="#">RCL_04_0405_00000</a></td>
+				<td>Тест пройден</td>
+                <td>Не закрыта
+                            </td>
+    </tr>
+    <tr>
+                <th scope="row">3</th>
+				<td>17.04.2022</td>
+				<td>NRC 5000</td>
+				<td class="table-warning"><a href="#">RCL_04_0100_05000</a></td>
+				<td> На Тест </td>
+                <td>Не закрыта
+                            </td>
+    </tr>
+    <tr>
+                <th scope="row">4</th>
+				<td>21.04.2022</td>
+				<td>AC</td>
+				<td class="table-light"><a href="#">RCL_04_0100_05000</a></td>
+				<td> Не проверена </td>
+                <td>
+                </td>
+    </tr>
+
+  </tbody>
+</table>
+{% endblock %}
