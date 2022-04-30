@@ -1,5 +1,5 @@
 from views import PageNotFound
-from request import PostRequest
+from request import PostRequest, GetRequest
 
 
 class Framework:
@@ -19,10 +19,16 @@ class Framework:
 
         request['method'] = method
 
-        request['logname'] = environ['LOGNAME']
         if method == 'POST':
-            result = PostRequest(environ).request_params()
-            print(result)
+            post_params = PostRequest(environ).request_params()
+            request['post_params'] = post_params
+            print(f'POST-запрос:{post_params}')
+        if method == 'GET':
+            # ?name1 = value1 & name2 = value2
+            get_params = GetRequest().get_params(environ)
+            request['get_params'] = get_params
+            print(f'GET-параметры: {get_params}')
+        print(request)
 
         for carws in self.carws_lst:
             carws(request)
