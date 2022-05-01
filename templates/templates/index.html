@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}
+Главная
+{% endblock %}
+{% block style %}
+{% include "style.html" %}
+{% endblock %}
+
+{% block body %}
+<h3 class="text-center"> Переместить в/из кассу(ы) </h3>
+<div class="main_table">
+    <form action="" method="post">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">ФИО</th>
+                <th scope="col">Модель</th>
+                <th scope="col">QR code</th>
+                <th scope="col">Статус</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr class=" table-success">
+
+                <th scope="row">1</th>
+                <td>Вялков Владимир Александрович</td>
+                <td>RC 2000</td>
+                <td><input type="hidden" name="qr_code" value="RCL_04_0025_02000">RCL_04_0025_02000</td>
+                <td> Закрыта
+                </td>
+                <!--                    <td>-->
+                <!--                        <button type="submit" class="btn btn-success">Переместить</button>-->
+                <!--                    </td>-->
+            </tr>
+            <tr class="table-success">
+                <th scope="row">2</th>
+                <td>Вялков Владимир Александрович</td>
+                <td>AC</td>
+                <td><a href="#"><input type="hidden" name="qr_codec" value="RCL_04_0306_00000">RCL_04_0306_00000</a>
+                </td>
+
+                <td> Закрыта
+                </td>
+                <!--                      <td>-->
+                <!--                        <button type="submit" class="btn btn-success">Переместить</button>-->
+                <!--                    </td>-->
+            </tr>
+
+            </tbody>
+        </table>
+    </form>
+    <form style="  margin-left: 5%; border: 1px solid;border-radius: 10px; width:300px" action="" method="post">
+
+        <h4 style="text-align:center">Оформить приход</h4>
+        <input style="text-align:center" type="date" name="date" placeholder="Дата">
+        <input type="hidden" name="status" value="Не проверена">
+        <script>$('.mydate').daterangepicker({
+              singleDatePicker: true,
+              locale: {
+             format: 'DD.MM.YYYY'
+              }
+             });
+        </script>
+        <p style="text-align:center"><label class="title" for="qr_code"> QR код : RCL_04_0</label>
+            <input class="rounded" size="3" pattern="[0-9]{3}" maxlength="3" type="text" name="qr_code" id="qr_code"
+                   required>
+            <select class="rounded" name="par" id="par">
+                <option value="ac">AC</option>
+                <option value="one_f">1000</option>
+                <option value="two_f">2000</option>
+                <option value="five_f">5000</option>
+                <option value="ten_f">10000</option>
+            </select>
+
+            <button style="margin:15px 50px 0" type="submit" class="btn btn-primary">Оформить приход</button>
+
+    </form>
+</div>
+{% endblock %}
+
+
+
