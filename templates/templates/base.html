@@ -14,17 +14,6 @@
 
 </head>
 <body>
-<style>
-    *,p{
-        margin:0;
-        padding:0;
-    }
-    body{
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-    }
-</style>
 {% block style %}{% endblock %}
 <header>
     <div class="logo">
@@ -41,7 +30,8 @@
         </div>
     </div>
     <div class="menu">
-    <a class="btn btn-success" href="start_repair" >Начать ремонт</a>
+
+    <a  style="margin-right:5px" class="btn btn-success" href="start_repair" >Начать ремонт</a>
     <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             Отчеты

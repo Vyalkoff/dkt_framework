@@ -1,4 +1,6 @@
 from dkt.templator import render
+from patterns.creational_patterns import Storage
+from load import get_storage
 
 
 class Login:
@@ -13,12 +15,19 @@ class PageNotFound:
 
 class Index:
     def __call__(self, request):
+        if request['method'] == 'POST':
+            store = Storage(request)
+            store.add_storage()
         return '200 OK', render('index.html', logo=request)
 
 
 class WareHouse:
     def __call__(self, request):
-        return '200 OK', render('warehouse.html', logo=request)
+        storage = get_storage()
+        print(type(storage))
+        for key,value in storage.items():
+            print(key,value)
+        return '200 OK', render('warehouse.html', logo=request, storage=storage)
 
 
 class RepairHistory:
@@ -29,4 +38,3 @@ class RepairHistory:
 class StartRepair:
     def __call__(self, request):
         return '200 OK', render('start_repair.html', logo=request)
-

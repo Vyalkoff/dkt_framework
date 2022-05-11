@@ -28,7 +28,6 @@ class Framework:
             get_params = GetRequest().get_params(environ)
             request['get_params'] = get_params
             print(f'GET-параметры: {get_params}')
-        print(request)
 
         for carws in self.carws_lst:
             carws(request)

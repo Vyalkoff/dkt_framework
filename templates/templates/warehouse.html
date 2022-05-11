@@ -10,6 +10,7 @@
 {% block body %}
 <h2 style="text-align:center">На складе</h2>
 
+
 <table class="table">
   <thead>
     <tr>
@@ -41,25 +42,20 @@
                 <td>Не закрыта
                             </td>
     </tr>
+
+
+    {% for key,value in storage.items()%}
     <tr>
-                <th scope="row">3</th>
-				<td>17.04.2022</td>
-				<td>NRC 5000</td>
-				<td class="table-warning"><a href="#">RCL_04_0100_05000</a></td>
-				<td> На Тест </td>
+                <th scope="row">{{key}}</th>
+				<td>{{value.date}}</td>
+				<td>{{value.par}}</td>
+				<td class="table-light"><a href="#">{{value.qr_code}}</a></td>
+				<td> {{value.status}}</td>
                 <td>Не закрыта
                             </td>
     </tr>
-    <tr>
-                <th scope="row">4</th>
-				<td>21.04.2022</td>
-				<td>AC</td>
-				<td class="table-light"><a href="#">RCL_04_0100_05000</a></td>
-				<td> Не проверена </td>
-                <td>
-                </td>
-    </tr>
-
+    {% endfor %}
   </tbody>
 </table>
+
 {% endblock %}
