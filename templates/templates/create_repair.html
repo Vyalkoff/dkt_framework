@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+Запчасти
+{% endblock %}
+{% block style %}
+{% include "style.html" %}
+{% endblock %}
+{% block body %}
+<form action="" method="post">
+    <label>Название
+        <input type="text" name = "name" placeholder="Название"/>
+    </label>
+    <button type="submit">Добавить</button>
+</form>
+{% endblock %}

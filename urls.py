@@ -1,4 +1,4 @@
-from views import Login, Index, WareHouse, RepairHistory, StartRepair
+from views import Login, Index, WareHouse, RepairHistory, StartRepair, RepairParts, CreateCategory
 from datetime import date
 
 
@@ -14,4 +14,8 @@ cswp_obj = {
     '/warehouse': WareHouse(),
     '/repair_history': RepairHistory(),
     '/start_repair': StartRepair(),
+    '/repair_parts': RepairParts(),
+    '/create_repair_category': CreateCategory(),
+    # '/category-list/': CategoryList(),
+
 }

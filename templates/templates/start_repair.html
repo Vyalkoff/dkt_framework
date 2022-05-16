@@ -16,7 +16,7 @@
                 <legend >Выбрать кассету</legend>
                 <label class="title" for="qr_code"> QR код : RCL_04_0</label>
                     <input class="rounded" required size="3" maxlength="3" min="3" type="text" name="qr_code" id="qr_code">
-                    <select class="rounded" name="par" id="par">
+                <label for="par">Тип</label><select class="rounded" name="par" id="par">
                         <option value="ac">AC</option>
                         <option value="one_f">1000</option>
                         <option value="two_f">2000</option>
@@ -42,5 +42,6 @@
             </fieldset>
             <button  style=" margin:16px 36px" type="submit" class="btn btn-primary">Оформить</button>
         </form>
+    <div>Винты</div>
 </div>
 {% endblock %}

@@ -19,6 +19,7 @@
                 <th scope="col">Модель</th>
                 <th scope="col">QR code</th>
                 <th scope="col">Статус</th>
+                <th scope="col">Отправить в кассу</th>
             </tr>
             </thead>
             <tbody>
@@ -29,11 +30,11 @@
                 <td>Вялков Владимир Александрович</td>
                 <td>RC 2000</td>
                 <td><input type="hidden" name="qr_code" value="RCL_04_0025_02000">RCL_04_0025_02000</td>
-                <td> Закрыта
+                <td> Отремонтирова
                 </td>
-                <!--                    <td>-->
-                <!--                        <button type="submit" class="btn btn-success">Переместить</button>-->
-                <!--                    </td>-->
+                                    <td>
+                                        <button type="submit" class="btn btn-success">Закрыть</button>
+                                    </td>
             </tr>
             <tr class="table-success">
                 <th scope="row">2</th>
@@ -42,11 +43,11 @@
                 <td><a href="#"><input type="hidden" name="qr_codec" value="RCL_04_0306_00000">RCL_04_0306_00000</a>
                 </td>
 
-                <td> Закрыта
+                <td> Отремонтирова
                 </td>
-                <!--                      <td>-->
-                <!--                        <button type="submit" class="btn btn-success">Переместить</button>-->
-                <!--                    </td>-->
+                                      <td>
+                                        <button type="submit" class="btn btn-success">Закрыть</button>
+                                    </td>
             </tr>
 
             </tbody>
@@ -60,8 +61,9 @@
         <script>$('.mydate').daterangepicker({
               singleDatePicker: true,
               locale: {
-             format: 'DD.MM.YYYY'
+             format: 'DD.MM.YYYY',
               }
+
              });
         </script>
 <!--        <div class="form-checker">-->

@@ -24,9 +24,6 @@ class Index:
 class WareHouse:
     def __call__(self, request):
         storage = get_storage()
-        print(type(storage))
-        for key,value in storage.items():
-            print(key,value)
         return '200 OK', render('warehouse.html', logo=request, storage=storage)
 
 
@@ -38,3 +35,18 @@ class RepairHistory:
 class StartRepair:
     def __call__(self, request):
         return '200 OK', render('start_repair.html', logo=request)
+
+
+class RepairParts:
+    def __call__(self, request):
+        return '200 OK', render('repair_parts.html', logo=request)
+
+
+class CreateCategory:
+    def __call__(self, request):
+        if request['method'] == 'POST':
+            # метод пост
+            print(request)
+            data = request['data']
+
+        return '200 OK', render('create_repair.html', logo=request)

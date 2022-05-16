@@ -3,7 +3,6 @@ import json
 from variable import FILE_STORAGE
 
 
-
 class Cassette:
     def __init__(self, code, par):
         self.code = f'RCL_04_0{code}_'
@@ -20,11 +19,17 @@ class AC(Cassette):
     def get_qrcode(self):
         return f'{self.code}0000'
 
+    def get_model(self):
+        return 'AC'
+
 
 class Denomination(Cassette):
 
     def get_qrcode(self):
         return f'{self.code}{self.par}'
+
+    def get_model(self):
+        return 'AC'
 
 
 class CassetteFactory:
@@ -46,7 +51,6 @@ class Storage:
         self.id = Storage.auto_id
         Storage.auto_id += 1
         self.params = request['post_params']
-        self.name = request['name']
         self.storage = {}
 
     def create_cassette_qr(self):
@@ -61,8 +65,6 @@ class Storage:
     def add_storage(self):
 
         self.params['qr_code'] = self.create_cassette_qr()
-        self.params['name'] = self.name
-        print('GFH', self.params)
         with open(FILE_STORAGE) as f:
             data = json.load(f)
             self.id = len(data)
